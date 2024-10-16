@@ -83,13 +83,22 @@ body, html {
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 5em;
     margin: 0;
-    font-weight: 700;
+    font-weight: 900;
+}
+
+h3 {
+    font-size: 2em;
+    color:#cdcfd0;
+    margin: 0;
+    font-weight: 900;
 }
 
 p {
-    font-size: 1.2em;
+    font-size: 1.5em;
+    margin: 0;
+    color:#cdcfd0;
     font-weight: 400;
 }
 
@@ -101,17 +110,42 @@ p {
 }
 
 .about h2 {
-    font-size: 3em;
+    margin-top: 50px;
+    font-size: 2.5em;
     color: #333;
     font-weight: 700;
 }
 
+.about h3 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 1.75em;
+    color: #444343;
+    font-weight: 700;
+}
+
 .about p {
-    font-size: 1.2em;
+    font-size: 1.4em;
     color: #666;
     max-width: 700px;
     margin: 0 auto;
     font-weight: 400;
+}
+
+.about li {
+    font-size: 1.4em;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.about video {
+    width: 75%;
+    height: auto;
+    margin-top: 20px;
 }
 
 /* Contact section styling */
@@ -205,11 +239,15 @@ p {
 
 .footer-left {
     font-size: 0.9em;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .footer-right {
     display: flex;
     align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .footer-logo {
