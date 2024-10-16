@@ -267,7 +267,7 @@ p {
 }
 
 /* Media query for smaller screens */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .footer {
         flex-direction: column;
         text-align: center;
@@ -281,4 +281,4 @@ p {
         width: 80px;
         margin-left: 10px;
     }
-}
+}*/
