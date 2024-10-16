@@ -47,11 +47,11 @@ body, html {
     background-color: #555;
 }
 
-@media (max-width: 800px) {
+/*@media (max-width: 800px) {
     .logo {
-        width: 20vw; /* Adjust the logo size for smaller screens */
-        top: 10px; /* Reduce top margin on smaller devices */
-        left: 10px; /* Reduce left margin on smaller devices */
+        width: 20vw;
+        top: 10px;
+        left: 10px;
     }
 
     .scroll-to-contact {
@@ -60,7 +60,7 @@ body, html {
         font-size: 0.9em;
         padding: 8px 16px;
     }
-}
+}*/
 
 .video-background {
     position: absolute;
