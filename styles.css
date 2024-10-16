@@ -4,7 +4,7 @@ body, html {
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Full-screen video background */
@@ -13,6 +13,53 @@ body, html {
     width: 100%;
     height: 100vh; /* Video container fills the full screen */
     overflow: hidden;
+}
+
+.logo {
+    position: absolute;
+    top: 10px; /* Distance from the top of the page */
+    left: 10vw; /* Distance from the left of the page */
+    width: 40vw; /* Use viewport width for responsive scaling */
+    max-width: 250px; /* Ensure logo doesn't grow too large on large screens */
+    height: auto;
+    z-index: 10; /* Ensure the logo appears above the video */
+}
+
+/* Contact Us button on top right */
+.scroll-to-contact {
+    position: absolute;
+    top: 20px;
+    right: 10vw;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 700;
+    z-index: 10;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for button */
+.scroll-to-contact:hover {
+    background-color: #555;
+}
+
+@media (max-width: 800px) {
+    .logo {
+        width: 20vw; /* Adjust the logo size for smaller screens */
+        top: 10px; /* Reduce top margin on smaller devices */
+        left: 10px; /* Reduce left margin on smaller devices */
+    }
+
+    .scroll-to-contact {
+        right: 10px;
+        top: 10px;
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
 }
 
 .video-background {
@@ -38,6 +85,12 @@ body, html {
 h1 {
     font-size: 4em;
     margin: 0;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.2em;
+    font-weight: 400;
 }
 
 /* About section style */
@@ -51,6 +104,7 @@ h1 {
 .about h2 {
     font-size: 3em;
     color: #333;
+    font-weight: 700;
 }
 
 .about p {
@@ -58,4 +112,77 @@ h1 {
     color: #666;
     max-width: 700px;
     margin: 0 auto;
+    font-weight: 400;
+}
+
+/* Contact section styling */
+.contact {
+    padding: 50px;
+    background-color: #e9ecef;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: 700;
+}
+
+.contact p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+
+
+/* Contact form styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form button {
+    padding: 15px 30px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+/* Contact details styling */
+.contact-details {
+    margin-top: 30px;
+}
+
+.contact-details h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-details p {
+    font-size: 1.1em;
+    color: #666;
+    margin: 5px 0;
 }

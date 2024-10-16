@@ -4,12 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyField</title>
+    
+    <!-- Load Roboto font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Smooth scroll behavior -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('.scroll-to-contact').addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </head>
 <body>
 
     <!-- Video Background Section -->
     <div class="video-container">
+        <img src="assets/myfield_logo_full.png" alt="Company Logo" class="logo">
+
+        <!-- Scroll to Contact button -->
+        <a href="#contact" class="scroll-to-contact">Contact Us</a>
+
         <video autoplay muted loop class="video-background">
             <source src="assets/sample_farm_video.mp4" type="video/mp4">
             Your browser does not support the video.
@@ -31,6 +50,7 @@
         </p>
     </div>
 
+    <!-- Mission Section -->
     <div class="about">
         <h2>Mission</h2>
         <p>
@@ -40,6 +60,27 @@
             would like to take some work off your plate!
 
         </p>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you! Please get in touch directly with our contact information.</p>
+
+        <!-- Contact Form
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>-->
+
+        <!-- Contact Details -->
+        <div class="contact-details">
+            <h3>Contact Information</h3>
+            <p><strong>Email:</strong> <a href="info@myfield.us">info@myfield.us</a></p>
+            <p><strong>Location:</strong> Georgia Tech, Atlanta, GA 30332</p>
+        </div>
     </div>
 
 </body>
