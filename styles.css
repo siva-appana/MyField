@@ -82,25 +82,38 @@ body, html {
     color: white;
 }
 
-h1 {
+.content h1 {
     font-size: 5em;
     margin: 0;
     font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 0px #fff, 0 0 0px #fff;
 }
 
-h3 {
+.content h3 {
     font-size: 2em;
-    color:#cdcfd0;
+    color:#1f1f1f;
     margin: 0;
     font-weight: 900;
+    text-shadow: 0 0 3px #fff, 0 0 10px #fff;
 }
 
-p {
+.content p {
     font-size: 1.5em;
     margin: 0;
-    color:#cdcfd0;
+    color:#2f2f2f;
     font-weight: 400;
+    text-shadow: 0 0 3px #fff, 0 0 10px #fff;
 }
+
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #337D3B, 0 0 40px #337D3B, 0 0 50px #337D3B, 0 0 60px #337D3B, 0 0 70px #337D3B;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #52c45f, 0 0 40px #52c45f, 0 0 50px #52c45f, 0 0 60px #52c45f, 0 0 70px #52c45f, 0 0 80px #52c45f;
+    }
+  }
 
 /* About section style */
 .about {
