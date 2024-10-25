@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyField</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <!-- Logo and Brand Name -->
+        <div class="navbar-left">
+            <img src="./assets/myfield_logo_full.png" alt="MyField Logo" class="navbar-logo">
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="navbar-right">
+            <a href="#contact" class="navbar-link">Contact Us</a>
+        </div>
+    </nav>
+    
+
+    <!-- Landing Page Section with Video Background -->
+    <section id="home" class="landing-page">
+        <video autoplay muted loop class="background-video">
+            <source src="./assets/loop_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>MyField</h1>
+            <h3>Be Crop Confident</h3>
+            <p>Your farm's robotic fruit counting and yield estimation service</p>
+        </div>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section alternate-left">
+        <div class="media-content">
+            <img src="./assets/dji_drone.png" alt="Cutting Edge Technology">
+        </div>
+        <div class="text-content">
+            <h2>Large Farm Service</h2>
+            <p>Reliably count fruits/vegetables on large farms spanning tens, hundreds, and even thousands of acres before harvest.</p>
+            <div class="subsection" onclick="toggleSubsection(this)">
+                <h3>Drone Survey</h3>
+                <p class="subsection-content">Technicians release high-speed autonomous drones that hover 4-10 feet above the crops 
+                    to scan your fields for fruits and vegetables. Sit back and relax as the drones perform your cumbersome work. 
+                </p>
+            </div>
+            <div class="subsection" onclick="toggleSubsection(this)">
+                <h3>Data Reports</h3>
+                <p class="subsection-content">
+                    Receive valuable quantitative and spatial data reports to justify your business decisions without the time 
+                    and inaccuracies of manual or model-based estimation. Allow us to manage your yield data and display useful charts
+                    with each subsequent harvest.
+                </p>
+            </div>
+            <div class="subsection" onclick="toggleSubsection(this)">
+                <h3>Service Model</h3>
+                <p class="subsection-content">
+                    Save your money and schedule sessions with MyField as needed. All of the special equipment used to scan your farms 
+                    owned, maintained, and operated by MyField.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="section alternate-right">
+        <div class="text-content">
+            <h2>Fruit/Vegetable Counting</h2>
+            <p>Accurately count fruits and vegetables and categorize ripeness with one video.</p>
+            <div class="subsection" onclick="toggleSubsection(this)">
+                <h3>Video to Count</h3>
+                <p class="subsection-content">Upload a video of your bushes or crops taken with your phone or camera to our platform
+                    for one of the supported fruits or vegetables. Choose the produce that needs to be counted, and allow our
+                    software to count the quantity of ripe and unripe produce.</p>
+            </div>
+            <div class="subsection" onclick="toggleSubsection(this)">
+                <h3>Finding Hidden Produce</h3>
+                <p class="subsection-content">
+                    Receive useful data with fruit or vegetable counts in addition to a frame highlighting all of the fruits
+                    available in the picture.
+                </p>
+            </div>
+        </div>
+        <div class="media-content">
+            <img src="./assets/cv_pepper_count.gif" alt="Robotic Pepper Counting">
+        </div>
+    </section>
+
+    
+
+    <!-- Contact Section 
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>-->
+
+    <section class="contact-details">
+        <h2>Contact Information</h2>
+        <p><strong>Email:</strong>info@myfield.us</p>
+        <p><strong>Location: </strong>Atlanta, GA</p>
+    </section>
+
+    <!-- Embedded JavaScript for Smooth Scrolling and Subsection Toggling -->
+    <script>
+        // Smooth scrolling for navigation links
+        // Select the "Contact Us" link
+        const contactLink = document.querySelector('.navbar-link');
+
+        // Add a click event listener to the link
+        contactLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default anchor click behavior
+
+            // Get the contact section element
+            const contactSection = document.querySelector('#contact');
+
+            // Scroll smoothly to the contact section
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Function to handle subsection expansion
+        function toggleSubsection(clickedElement) {
+            // Close any open subsections
+            document.querySelectorAll('.subsection-content').forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Show the clicked subsection's content
+            const content = clickedElement.querySelector('.subsection-content');
+            content.style.display = 'block';
+        }
+
+        // Initially hide all subsection content
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.subsection-content').forEach(content => {
+                content.style.display = 'none';
+            });
+        });
+
+        // Get references to the navbar and landing page elements
+        const navbar = document.querySelector('.navbar');
+        const landingPage = document.querySelector('.landing-page');
+
+        // Function to check scroll position and toggle navbar visibility
+        function toggleNavbarOnScroll() {
+            // Get the height of the landing page section
+            const landingPageHeight = landingPage.offsetHeight;
+            
+            // Check if scroll position has passed the landing page height
+            if (window.scrollY > landingPageHeight) {
+                navbar.classList.add('hidden'); // Hide navbar
+            } else {
+                navbar.classList.remove('hidden'); // Show navbar
+            }
+        }
+
+        // Attach scroll event listener to the window
+        window.addEventListener('scroll', toggleNavbarOnScroll);
+    </script>
+</body>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-left">
+        <!--<p>&copy; 2024 MyField. All rights reserved.</p>-->
+        <p><strong>MyField</strong></p>
+        <p>Email: info@myfield.us</p>
+        <p>Atlanta, GA</p>
+    </div>
+    <div class="footer-right">
+        <a href="https://create-x.gatech.edu" target="_blank">
+            <img src="assets/createx_logo.png" alt="Create-X Logo" class="footer-logo">
+        </a>
+    </div>
+</footer>
+</html>
