@@ -76,7 +76,7 @@ body {
     color: #007BFF; /* Change color on hover */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 750px) {
     .navbar {
         padding: 10px 20px;
         width: 95%;
@@ -241,7 +241,7 @@ body {
 }
 
 /* Responsive layout for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 750px) {
     .section {
         flex-direction: column;
     }
@@ -407,7 +407,7 @@ body {
 }
 
 /* Media query for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 750px) {
     .footer {
         flex-direction: column;
         text-align: center;
