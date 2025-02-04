@@ -48,23 +48,12 @@
             </p>
             <div class="video-container">
                 <div class="video-wrapper">
-                    <video id="valueVideo" class="value-prop-video" src="./assets/MyField_trailer_compressed.mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="video-controls">
-                        <button class="video-btn" onclick="playPause()">
-                            <i class="fas fa-play"></i> Play/Pause
-                        </button>
-                        <button class="video-btn" onclick="restartVideo()">
-                            <i class="fas fa-redo"></i> Restart
-                        </button>
-                        <button class="video-btn" onclick="toggleMute()">
-                            <i class="fas fa-volume-up"></i> Mute/Unmute
-                        </button>
-                        <button class="video-btn" onclick="toggleFullScreen()">
-                            <i class="fas fa-expand"></i> Fullscreen
-                        </button>
-                    </div>
+                    <iframe id="valueVideo" class="value-prop-video" 
+                        src="https://www.youtube.com/embed/8_YxuqsbxzI"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>
