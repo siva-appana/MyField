@@ -17,6 +17,7 @@
 
         <!-- Navigation Links -->
         <div class="navbar-right">
+            <a href="#learn-more" class="navbar-link">Learn More</a>
             <a href="#contact" class="navbar-link">Contact Us</a>
         </div>
     </nav>
@@ -25,17 +26,50 @@
     <!-- Landing Page Section with Video Background -->
     <section id="home" class="landing-page">
         <video autoplay muted loop class="background-video">
-            <source src="./assets/loop_video.mp4" type="video/mp4">
+            <source src="./assets/MyField_loop_video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="overlay"></div>
         <div class="content">
             <h1>MyField</h1>
-            <h3>Be Crop Confident</h3>
-            <p>Your farm's robotic fruit counting and yield estimation service</p>
+            <h3>Confidence in Crops</h3>
+            <p>Revolutionizing agriculture with AI-powered fruit counting and yield estimation</p>
         </div>
     </section>
 
+    <!-- Value Proposition Section -->
+    <section id="learn-more" class="section">
+        <div class="text-content full-width">
+            <h2>Why Choose MyField?</h2>
+            <p class="value-prop-text">
+                Our services physically count the fruit and vegetables on your crops. With our AI-powered solution and
+                fast drones, our team quickly and reliably delivers informative results with 80% accuracy.
+                Make data-driven decisions with accurate yield estimates before harvest.
+            </p>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video id="valueVideo" class="value-prop-video" src="./assets/MyField_trailer_compressed.mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-controls">
+                        <button class="video-btn" onclick="playPause()">
+                            <i class="fas fa-play"></i> Play/Pause
+                        </button>
+                        <button class="video-btn" onclick="restartVideo()">
+                            <i class="fas fa-redo"></i> Restart
+                        </button>
+                        <button class="video-btn" onclick="toggleMute()">
+                            <i class="fas fa-volume-up"></i> Mute/Unmute
+                        </button>
+                        <button class="video-btn" onclick="toggleFullScreen()">
+                            <i class="fas fa-expand"></i> Fullscreen
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Section 1 -->
     <section class="section alternate-left">
         <div class="media-content">
@@ -92,31 +126,16 @@
         </div>
     </section>
 
-    
-
-    <!-- Contact Section 
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="text-content full-width">
+            <h2>Get in Touch</h2>
+            <p class="contact-text">Ready to transform your yield estimation? Contact us to learn more about our services.</p>
+            <div class="contact-info">
+                <p><strong>Email:</strong> info@myfield.us</p>
+                <p><strong>Location:</strong> Atlanta, GA</p>
+            </div>
         </div>
-    </section>-->
-
-    <section id="contact" class="contact-details">
-        <h2>Contact Information</h2>
-        <p><strong>Email:</strong>info@myfield.us</p>
-        <p><strong>Location: </strong>Atlanta, GA</p>
     </section>
 
     <!-- Embedded JavaScript for Smooth Scrolling and Subsection Toggling -->
@@ -174,14 +193,99 @@
 
         // Attach scroll event listener to the window
         window.addEventListener('scroll', toggleNavbarOnScroll);
+
+        // Video Controls
+        const video = document.getElementById('valueVideo');
+        
+        function playPause() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+        
+        function restartVideo() {
+            video.currentTime = 0;
+            video.play();
+        }
+        
+        function toggleMute() {
+            video.muted = !video.muted;
+        }
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) { /* Safari */
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) { /* IE11 */
+                    video.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE11 */
+                    document.msExitFullscreen();
+                }
+            }
+        }
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Optional: stop observing after animation
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Add fade-in class and observe all sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.add('fade-in');
+                observer.observe(section);
+            });
+        });
+
+        // Add smooth scrolling and video play functionality for Learn More
+        const learnMoreLink = document.querySelector('.navbar-link[href="#learn-more"]');
+        const valueVideo = document.getElementById('valueVideo');
+
+        learnMoreLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            const learnMoreSection = document.querySelector('#learn-more');
+            
+            learnMoreSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Play the video after scrolling
+            setTimeout(() => {
+                valueVideo.play();
+            }, 1000); // Small delay to ensure smooth transition
+        });
     </script>
+
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </body>
 
 <!-- Footer Section -->
 <footer class="footer">
     <div class="footer-left">
-        <!--<p>&copy; 2024 MyField. All rights reserved.</p>-->
         <p><strong>MyField</strong></p>
+        <p>Transforming agricultural yield estimation</p>
         <p>Email: info@myfield.us</p>
         <p>Atlanta, GA</p>
     </div>
