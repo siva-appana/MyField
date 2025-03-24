@@ -1,0 +1,48 @@
+.myfield-navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	padding: 15px 30px;
+	border-radius: 16px;
+	/* box-shadow: 0 3px 17px rgba(0, 0, 0, 0.1); */
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	position: static;
+	/* top: 20px;
+	left: 50%; */
+	/* transform: translateX(-50%); */
+	/* width: 80%; */
+	max-width: 1200px;
+	transition: top 0.3s ease;
+	/* z-index: 1; */
+}
+
+.navbar-left {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-logo {
+	width: auto;
+	height: 30px;
+	margin-right: 10px;
+}
+
+.navbar-right {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.navbar-link {
+	margin-right: 0;
+	font-size: 1.1rem;
+	color: #006523;
+	font-weight: 500;
+	padding: 8px 16px;
+	border-radius: 8px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
