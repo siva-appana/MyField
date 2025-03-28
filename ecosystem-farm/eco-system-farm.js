@@ -39,3 +39,36 @@ function createMapDots(data) {
     // map.style.height = img.getBoundingClientRect().height + "px";
     // mapCardBody.style.height = img.getBoundingClientRect().height + "px";
 }
+onresize = () => {
+    mapDotContainer.replaceChildren();
+    createMapDots(data);
+    resetImageZoom();
+    imageZoom("farm-image", "img");
+};
+function loadImage() {
+    const imageToLoad = new Image();
+    imageToLoad.onload = function () {
+        farmImage.src = imageToLoad.src;
+        function rendered() {
+            //Render complete
+            console.log("image rendered");
+            imageZoom("farm-image", "img-bg");
+            imageZoom("farm-image", "img");
+        }
+        function startRender() {
+            //Rendering start
+            requestAnimationFrame(rendered);
+        }
+        function loaded() {
+            requestAnimationFrame(startRender);
+        }
+        requestAnimationFrame(loaded);
+    };
+    farmImage.style.setProperty("background-image", "url(drone_scan_complete_stitch_vertical_low_res.png)");
+    imageToLoad.src = "drone_scan_complete_stitch_vertical.jpg";
+}
+imageZoom("farm-image", "img-bg");
+loadImage();
+farmImage.onchange = () => { console.log("hello"); };
+// farmImage.onload = () => {console.debug("fully loaded")}
+// farmImage.src = "drone_scan_complete_stitch_vertical.png";

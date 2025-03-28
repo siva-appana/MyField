@@ -55,6 +55,14 @@
 #img {
 	height: 70vh;
 	width: 42.55vw;
+	z-index: 1;
+	position: absolute;
+}
+
+#img-bg {
+	z-index: 0;
+	width: 42.55vw;
+	position: static;
 }
 
 .img-zoom-container {
@@ -66,8 +74,8 @@
 	position: absolute;
 	border: 3px solid #d4d4d4;
 	/*set the size of the lens:*/
-	width: 40px;
-	height: 40px;
+	/* width: 40px;
+	height: 40px; */
 	pointer-events: all;
 	z-index: 1;
 }
