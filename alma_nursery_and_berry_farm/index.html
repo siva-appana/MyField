@@ -38,39 +38,30 @@
 			</div> -->
 			<div>
 				<div class="card shadow" id="map-card">
-					<div class="card-header">Map
-						<ul id="legend">
-							<li class="d-flex gap-2 align-items-center">
-								<div class="map-point"></div>
-								<small>Drone Flight Path</small>
-							</li>
-						</ul>
-					</div>
+					<div class="card-header">Map</div>
 					<div id="map-card-body" class="card-body bg-light p-2">
 						<div id="map">
 							<div class="img-zoom-container">
-								<img id="farm-image" src="drone_scan_complete_stitch_vertical.jpg" alt="Farm">
+								<img id="farm-image" alt="Farm" src="drone_scan_complete_stitch_vertical_low_res.png">
 							</div>
-							<div id="map-dot-container"></div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div>
-				<div class="card shadow">
+				<div class="card shadow" id="close-up-card">
 					<div class="card-header">Close-Up</div>
 					<div class="card-body">
 						<div id="img" class="img-zoom-result"></div>
+						<div id="img-bg" class="img-zoom-result"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<script src="image-zoom.js"></script>
-	<script>imageZoom("farm-image", "img");</script>
 	<script src="eco-system-farm.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-	<script src="SrtToJSONConverter.js"></script>
 	<script src="srt-2.js"></script>
 	<script>createMapDots(data);</script>
 </body>
